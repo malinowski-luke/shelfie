@@ -34,10 +34,23 @@
   align-items: flex-end;
 }
 
-.button-conatiner button {
+.button {
   width: 5vw;
   height: 5vh;
   font-size: 0.9rem;
   color: #ffffff;
   background: #3ad886;
+}
+
+.editing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editing-container input {
+  width: 20vw;
+  height: 5vh;
+  font-size: 1.5rem;
+  margin-bottom: 2vh;
 }
