@@ -8,6 +8,13 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env
 
 app.use(express.json())
 
+// ---endpoints
+app.get(`/api/inventory`, ctrl.getProducts)
+app.get(`/api/inventory/:id`, ctrl.getProduct)
+app.post('/api/inventory', ctrl.addNewProduct)
+app.put('/api/inventory/:id', ctrl.updateProduct)
+app.delete('/api/inventory/:id', ctrl.deleteProduct)
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {
