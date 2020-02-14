@@ -1,0 +1,43 @@
+.Product {
+  width: 45vw;
+  height: 35vh;
+  border-radius: 1vw;
+  margin-bottom: 5vh;
+  background: #d43735;
+}
+
+.items-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.text-content {
+  width: 22vw;
+  margin-left: 1vw;
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.img-content {
+  width: 20vw;
+  height: 30vh;
+}
+
+.button-conatiner {
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.button-conatiner button {
+  width: 5vw;
+  height: 5vh;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: #3ad886;
+}

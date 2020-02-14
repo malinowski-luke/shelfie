@@ -3,17 +3,18 @@ const express = require('express')
 const massive = require('massive')
 const app = express()
 const ctrl = require('./controller')
+const ref = require('./refrence')
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env
 
 app.use(express.json())
 
 // ---endpoints
-app.get(`/api/inventory`, ctrl.getProducts)
-app.get(`/api/inventory/:id`, ctrl.getProduct)
-app.post('/api/inventory', ctrl.addNewProduct)
-app.put('/api/inventory/:id', ctrl.updateProduct)
-app.delete('/api/inventory/:id', ctrl.deleteProduct)
+app.get(ref.BASE_URL, ctrl.getProducts)
+app.get(`${ref.BASE_URL}/:id`, ctrl.getProduct)
+app.post(ref.BASE_URL, ctrl.addNewProduct)
+app.put(`${ref.BASE_URL}/:id`, ctrl.updateProduct)
+app.delete(`${ref.BASE_URL}/:id`, ctrl.deleteProduct)
 
 massive({
   connectionString: CONNECTION_STRING,
