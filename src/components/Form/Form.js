@@ -44,47 +44,60 @@ export default class Form extends Comp {
     const { addFn } = this.props
     const { name, price, img } = this.state
     return (
-      <div className='Form'>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-          }}
-          className='form-container'
-        >
-          <img src={img || noImg} width='80%' />
-          <label>Image Url:</label>
-          <input
-            value={img}
-            type='text'
-            onChange={e => {
-              this.handleImg(e.target.value)
+      <section className='Form'>
+        <div className='img-container'>
+          <img src={img || noImg} width='70%' />
+        </div>
+        {/* <div className=''>
+          <form
+            onSubmit={e => {
+              e.preventDefault()
             }}
-          />
-          <label>Product Name:</label>
-          <input
-            value={name}
-            type='text'
-            onChange={e => this.handleName(e.target.value)}
-          />
-          <label>Price:</label>
-          <input
-            value={price}
-            type='number'
-            onChange={e => this.handlePrice(e.target.value)}
-          />
-          <div>
-            <button onClick={() => this.resetFormInputs()}>Cancel</button>
-            <button
-              onClick={() => {
-                addFn({ name: name, price: +price, img: img })
-                this.resetFormInputs()
+            className='form-container'
+          >
+            <label for='img'>Image Url:</label>
+            <input
+              id='img'
+              value={img}
+              type='text'
+              onChange={e => {
+                this.handleImg(e.target.value)
               }}
-            >
-              Add To Inventory
-            </button>
-          </div>
-        </form>
-      </div>
+            />
+            <label for='name'>Product Name:</label>
+            <input
+              id='name'
+              value={name}
+              type='text'
+              onChange={e => this.handleName(e.target.value)}
+            />
+            <label for='price'>Price:</label>
+            <input
+              id='price'
+              value={price}
+              type='number'
+              onChange={e => this.handlePrice(e.target.value)}
+            />
+            <div className='button-conatiner-form'>
+              <button
+                className='button-form'
+                onClick={() => this.resetFormInputs()}
+              >
+                Cancel
+              </button>
+              <button
+                className='button-form'
+                onClick={() => {
+                  addFn({ name: name, price: +price, img: img })
+                  this.resetFormInputs()
+                }}
+              >
+                Add To Inventory
+              </button>
+            </div>
+          </form>
+        </div> */}
+      </section>
     )
   }
 }
