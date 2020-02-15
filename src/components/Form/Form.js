@@ -46,9 +46,9 @@ export default class Form extends Comp {
     return (
       <section className='Form'>
         <div className='img-container'>
-          <img src={img || noImg} width='70%' />
+          <img src={img || noImg} className='add-img-content' />
         </div>
-        {/* <div className=''>
+        <div className='form-container'>
           <form
             onSubmit={e => {
               e.preventDefault()
@@ -96,7 +96,7 @@ export default class Form extends Comp {
               </button>
             </div>
           </form>
-        </div> */}
+        </div>
       </section>
     )
   }

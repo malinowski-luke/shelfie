@@ -34,9 +34,12 @@ export default class App extends Comp {
   }
 
   addItem = obj => {
-    axios
-      .post(ref.BASE_URL, obj)
-      .catch(err => console.log(`post request err: ${err}`))
+    const { name, price, img } = obj
+    if (name || price || img) {
+      axios
+        .post(ref.BASE_URL, obj)
+        .catch(err => console.log(`post request err: ${err}`))
+    } else alert('Please Fill Out all the Fields!')
   }
 
   updateItem = (id, obj) => {
