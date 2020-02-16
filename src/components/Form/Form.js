@@ -1,6 +1,9 @@
 import React, { Component as Comp } from 'react'
 import noImg from '../../media/no-image.png'
 import './Form.css'
+import axios from 'axios'
+import ref from '../../refrence'
+import { Link } from 'react-router-dom'
 
 export default class Form extends Comp {
   constructor(props) {
@@ -12,6 +15,12 @@ export default class Form extends Comp {
     }
     // one function binding for the requirment VVVVVVVVV LOL ;-)
     this.resetFormInputs = this.resetFormInputs.bind(this)
+  }
+
+  addItem = obj => {
+    axios
+      .post(ref.BASE_URL, obj)
+      .catch(err => console.log(`post request err: ${err}`))
   }
 
   resetFormInputs() {
@@ -85,15 +94,26 @@ export default class Form extends Comp {
               >
                 Cancel
               </button>
-              <button
-                className='button-form'
-                onClick={() => {
-                  addFn({ name: name, price: +price, img: img })
-                  this.resetFormInputs()
-                }}
-              >
-                Add To Inventory
-              </button>
+              {name === '' || img === '' ? (
+                <button
+                  className='button-form'
+                  onClick={() => alert('Please Fill Out all the Fields!')}
+                >
+                  Add To Inventory
+                </button>
+              ) : (
+                <Link to='/'>
+                  <button
+                    className='button-form'
+                    onClick={() => {
+                      this.addItem({ name: name, price: +price, img: img })
+                      this.resetFormInputs()
+                    }}
+                  >
+                    Add To Inventory
+                  </button>
+                </Link>
+              )}
             </div>
           </form>
         </div>

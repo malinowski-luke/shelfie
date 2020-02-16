@@ -31,15 +31,6 @@ export default class Dashboard extends Comp {
       .catch(err => console.log(`get request err: ${err}`))
   }
 
-  // addItem = obj => {
-  //   const { name, price, img } = obj
-  //   if (name || price || img) {
-  //     axios
-  //       .post(ref.BASE_URL, obj)
-  //       .catch(err => console.log(`post request err: ${err}`))
-  //   } else alert('Please Fill Out all the Fields!')
-  // }
-
   updateItem = (id, obj) => {
     axios
       .put(`${ref.BASE_URL}/${id}`, obj)
