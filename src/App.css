@@ -1,4 +1,5 @@
 .App {
   margin: 5vw 10vh 10vw;
   display: flex;
+  justify-content: center;
 }
