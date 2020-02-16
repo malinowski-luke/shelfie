@@ -50,7 +50,6 @@ export default class Form extends Comp {
   }
 
   render() {
-    const { addFn } = this.props
     const { name, price, img } = this.state
     return (
       <section className='Form'>

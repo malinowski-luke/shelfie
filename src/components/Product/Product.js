@@ -56,17 +56,14 @@ export default class Product extends Comp {
               <div className='editing-container'>
                 <input
                   onChange={e => this.handleName(e.target.value)}
-                  placeholder='new item name'
                   type='text'
                 />
                 <input
                   onChange={e => this.handlePrice(e.target.value)}
-                  placeholder='new price'
                   type='number'
                 />
                 <input
                   onChange={e => this.handleImg(e.target.value)}
-                  placeholder='new img url'
                   type='text'
                 />
                 <button
