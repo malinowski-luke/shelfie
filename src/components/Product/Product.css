@@ -35,9 +35,10 @@
 }
 
 .button {
-  width: 5vw;
+  width: 6vw;
   height: 5vh;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  border-radius: 1vh;
   color: #ffffff;
   background: #3ad886;
 }
