@@ -130,7 +130,7 @@ export default class Form extends Comp {
                   onClick={() => alert('Please Fill Out all the Fields!')}
                 >
                   {console.log(edit)}
-                  {edit ? 'Save Changes' : 'Add To Inventory'}
+                  Add To Inventory
                 </button>
               ) : (
                 <Link to='/'>
@@ -149,7 +149,7 @@ export default class Form extends Comp {
                       this.resetFormInputs()
                     }}
                   >
-                    Add To Inventory
+                    {edit ? 'Save Changes' : 'Add To Inventory'}
                   </button>
                 </Link>
               )}
