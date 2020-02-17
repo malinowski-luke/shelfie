@@ -16,8 +16,9 @@ export default class Dashboard extends Comp {
     this.getItems()
   }
 
-  componentDidUpdate() {
-    this.getItems()
+  componentDidUpdate(prevProps, prevState) {
+    const { inventory } = this.state
+    if (prevState.inventory !== inventory) this.getItems()
   }
 
   getItems = () => {

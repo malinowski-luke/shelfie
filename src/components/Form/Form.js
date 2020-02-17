@@ -78,8 +78,6 @@ export default class Form extends Comp {
   render() {
     const { id } = this.props.match.params
     const { name, price, img, edit } = this.state
-    console.log(edit)
-
     return (
       <section className='Form'>
         <div className='img-container'>
@@ -129,7 +127,6 @@ export default class Form extends Comp {
                   className='button-form'
                   onClick={() => alert('Please Fill Out all the Fields!')}
                 >
-                  {console.log(edit)}
                   Add To Inventory
                 </button>
               ) : (
